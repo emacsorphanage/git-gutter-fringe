@@ -1,9 +1,9 @@
-;;; git-gutter-fringe.el ---
+;;; git-gutter-fringe.el --- Fringe version of git-gutter.el
 
-;; Copyright (C) 2012 by Syohei YOSHIDA
+;; Copyright (C) 2013 by Syohei YOSHIDA
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
-;; URL: https://github.com/syohex/emacs-git-gutter
+;; URL: https://github.com/syohex/emacs-git-gutter-fringe
 ;; Version: 0.01
 ;; Package-Requires: ((fringe-helper "0.1.1"))
 
@@ -102,13 +102,13 @@
          (beg (git-gutter:line-to-pos start-line))
          (end (or (and end-line (git-gutter:line-to-pos end-line))
                   beg))
-         (fringe-helper-insert-region beg end sign nil face))
+         (reference (fringe-helper-insert-region beg end sign nil face)))
     (push reference git-gutter-fr:bitmap-references)))
 
 (defun git-gutter-fr:view-diff-info (diffinfo)
-  (let ((start-line (git-gutter:diffinfo-start-line diffinfo))
-        (end-line (git-gutter:diffinfo-end-line diffinfo))
-        (type (git-gutter:diffinfo-type diffinfo)))
+  (let ((start-line (plist-get diffinfo :start-line))
+        (end-line (plist-get diffinfo :end-line))
+        (type (plist-get diffinfo :type)))
     (git-gutter-fr:view-region type start-line end-line)))
 
 (defun git-gutter-fr:view-diff-infos (diffinfos)

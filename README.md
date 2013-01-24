@@ -12,6 +12,7 @@
 ## Requirements
 
 * Emacs 24 or higher
+* [git-gutter.el](https://github.com/syohex/emacs-git-gutter)
 * [fringe-helper](http://www.emacswiki.org/emacs/FringeHelper) for using `git-gutter-fringe`
 
 

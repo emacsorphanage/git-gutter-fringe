@@ -5,7 +5,7 @@
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
 ;; Version: 0.01
-;; Package-Requires: ((fringe-helper "0.1.1"))
+;; Package-Requires: ((git-gutter "0.03") (fringe-helper "0.1.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

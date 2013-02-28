@@ -46,36 +46,34 @@
   :group 'git-gutter)
 
 (fringe-helper-define 'git-gutter-fr:added nil
-                      "...XXX..."
-                      "...XXX..."
-                      "...XXX..."
-                      "XXXXXXXXX"
-                      "XXXXXXXXX"
-                      "XXXXXXXXX"
-                      "...XXX..."
-                      "...XXX..."
-                      "...XXX...")
+  "...XX..."
+  "...XX..."
+  "...XX..."
+  "XXXXXXXX"
+  "XXXXXXXX"
+  "...XX..."
+  "...XX..."
+  "...XX...")
 
 (fringe-helper-define 'git-gutter-fr:deleted nil
-                      "........."
-                      "........."
-                      "........."
-                      "XXXXXXXXX"
-                      "XXXXXXXXX"
-                      "XXXXXXXXX"
-                      "........."
-                      "........."
-                      ".........")
+  "........"
+  "........"
+  "........"
+  "XXXXXXXX"
+  "XXXXXXXX"
+  "........"
+  "........"
+  "........")
 
 (fringe-helper-define 'git-gutter-fr:modified nil
-                      "........."
-                      "..XXXXX.."
-                      "..XXXXX.."
-                      "..XXXXX.."
-                      "..XXXXX.."
-                      "..XXXXX.."
-                      "..XXXXX.."
-                      ".........")
+  "........"
+  "..XXXX.."
+  "..XXXX.."
+  "..XXXX.."
+  "..XXXX.."
+  "..XXXX.."
+  "..XXXX.."
+  "........")
 
 (defun git-gutter-fr:select-sign (type)
   (case type

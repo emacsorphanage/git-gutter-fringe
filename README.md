@@ -36,7 +36,7 @@ Interfaces are same as `git-gutter.el`.
 
 ### Look and feel
 
-![git-gutter-fringe-customize](image/image/git-gutter-fringe-customize.png)
+![git-gutter-fringe-customize](image/git-gutter-fringe-customize.png)
 
 You can change faces like following.
 
@@ -48,7 +48,7 @@ You can change faces like following.
 
 ### Position of fringe
 
-![git-gutter-fringe-right](image/image/git-gutter-fringe-right.png)
+![git-gutter-fringe-right](image/git-gutter-fringe-right.png)
 
 You can change position of fringe, left or right. Default is left.
 

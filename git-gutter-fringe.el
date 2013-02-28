@@ -45,6 +45,12 @@
   "Face of deleted"
   :group 'git-gutter)
 
+(defcustom git-gutter-fr:side 'left-fringe
+  "Side of show diff information"
+  :type '(choice (const :tag "Right Fringe" right-fringe)
+                 (const :tag "Left Fringe" left-fringe))
+  :group 'git-gutter)
+
 (fringe-helper-define 'git-gutter-fr:added nil
   "...XX..."
   "...XX..."
@@ -100,7 +106,8 @@
          (beg (git-gutter:line-to-pos start-line))
          (end (or (and end-line (git-gutter:line-to-pos end-line))
                   beg))
-         (reference (fringe-helper-insert-region beg end sign nil face)))
+         (reference (fringe-helper-insert-region
+                     beg end sign git-gutter-fr:side face)))
     (push reference git-gutter-fr:bitmap-references)))
 
 (defun git-gutter-fr:view-diff-info (diffinfo)

@@ -1,0 +1,8 @@
+Revision history for git-gutter-fringe.el
+
+Revision 0.02 2013/02/28 syohex
+   - Improve icon(Thanks sabof)
+   - add customize variable for position of fringe
+
+Revision 0.01 2013/02/20 syohex
+   - Initial version

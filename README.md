@@ -6,7 +6,7 @@
 
 ## Screenshot
 
-![git-gutter-fringe.el](https://github.com/syohex/emacs-git-gutter-fringe/raw/master/image/git-gutter-fringe.png)
+![git-gutter-fringe.el](image/git-gutter-fringe.png)
 
 
 ## Requirements
@@ -30,4 +30,28 @@ Interfaces are same as `git-gutter.el`.
 ```` elisp
 ;; You need to install fringe-helper.el
 (require 'git-gutter-fringe)
+````
+
+## Customize
+
+### Look and feel
+
+![git-gutter-fringe-customize](image/image/git-gutter-fringe-customize.png)
+
+You can change faces like following.
+
+````elisp
+(set-face-foreground 'git-gutter-fr:modified "yellow")
+(set-face-foreground 'git-gutter-fr:added    "blue")
+(set-face-foreground 'git-gutter-fr:deleted  "white")
+````
+
+### Position of fringe
+
+![git-gutter-fringe-right](image/image/git-gutter-fringe-right.png)
+
+You can change position of fringe, left or right. Default is left.
+
+````elisp
+(setq git-gutter-fr:side 'right-fringe)
 ````

@@ -98,7 +98,6 @@
      (error "Invalid type"))))
 
 (defvar git-gutter-fr:bitmap-references nil)
-(make-variable-buffer-local 'git-gutter-fr:bitmap-references)
 
 (defun git-gutter-fr:view-region (type start-line end-line)
   (let* ((sign (git-gutter-fr:select-sign type))
@@ -108,7 +107,11 @@
                   beg))
          (reference (fringe-helper-insert-region
                      beg end sign git-gutter-fr:side face)))
+    (overlay-put reference 'git-gutter t)
     (push reference git-gutter-fr:bitmap-references)))
+
+(defun git-gutter-fr:init ()
+  (make-local-variable 'git-gutter-fr:bitmap-references))
 
 (defun git-gutter-fr:view-diff-info (diffinfo)
   (let ((start-line (plist-get diffinfo :start-line))
@@ -126,6 +129,7 @@
   (mapc 'fringe-helper-remove git-gutter-fr:bitmap-references)
   (setq git-gutter-fr:bitmap-references nil))
 
+(setq git-gutter:init-function #'git-gutter-fr:init)
 (setq git-gutter:view-diff-function #'git-gutter-fr:view-diff-infos)
 (setq git-gutter:clear-function #'git-gutter-fr:clear)
 

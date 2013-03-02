@@ -1,5 +1,8 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.04 2013/03/04 syohex
+   - Improve deleting overlays
+
 Revision 0.03 2013/03/02 syohex
    - Improve deleting overlays
    - Don't use make-variable-buffer-local, use make-local-variable

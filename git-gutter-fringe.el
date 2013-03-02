@@ -4,8 +4,8 @@
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
-;; Version: 0.03
-;; Package-Requires: ((git-gutter "0.22") (fringe-helper "0.1.1"))
+;; Version: 0.04
+;; Package-Requires: ((git-gutter "0.23") (fringe-helper "0.1.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -108,6 +108,9 @@
          (reference (fringe-helper-insert-region
                      beg end sign git-gutter-fr:side face)))
     (overlay-put reference 'git-gutter t)
+    (dolist (ov (overlays-in beg (1+ end)))
+      (when (eq (overlay-get ov 'fringe-helper-parent) reference)
+        (overlay-put ov 'git-gutter t)))
     (push reference git-gutter-fr:bitmap-references)))
 
 (defun git-gutter-fr:init ()
@@ -125,8 +128,12 @@
   (save-excursion
     (mapc #'git-gutter-fr:view-diff-info diffinfos)))
 
+(defun git-gutter-fr:clear-overlay (reference)
+  ;;(fringe-helper-remove reference) @@@
+  t)
+
 (defun git-gutter-fr:clear ()
-  (mapc 'fringe-helper-remove git-gutter-fr:bitmap-references)
+  (mapc 'git-gutter-fr:clear-overlay git-gutter-fr:bitmap-references)
   (setq git-gutter-fr:bitmap-references nil))
 
 (setq git-gutter:init-function #'git-gutter-fr:init)

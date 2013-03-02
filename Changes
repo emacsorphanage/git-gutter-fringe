@@ -1,5 +1,10 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.03 2013/03/02 syohex
+   - Improve deleting overlays
+   - Don't use make-variable-buffer-local, use make-local-variable
+   - Update requirements package version
+
 Revision 0.02 2013/02/28 syohex
    - Improve icon(Thanks sabof)
    - add customize variable for position of fringe

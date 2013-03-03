@@ -1,7 +1,10 @@
 # git-gutter-fringe.el
 
 ## Introduction
-`git-gutter-fringe.el` is fringe version of of [git-gutter.el](https://github.com/syohex/emacs-git-gutter)
+`git-gutter-fringe.el` is fringe version of of [git-gutter.el](https://github.com/syohex/emacs-git-gutter).
+
+
+`git-gutter.el` does not work with `linum-mode` but `git-gutter-fringe.el` can work with `linum-mode`.
 
 
 ## Screenshot

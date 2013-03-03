@@ -1,5 +1,9 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.05 2013/03/04 syohex
+   - Update requirements package version.
+     Because there is bug that working with linum-mode
+
 Revision 0.04 2013/03/04 syohex
    - Improve deleting overlays
 

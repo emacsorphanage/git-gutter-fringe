@@ -1,5 +1,9 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.06 2013/03/07 syohex
+   - Update requirements package version.
+     Because git-gutter:toggle bug is fixed.
+
 Revision 0.05 2013/03/04 syohex
    - Update requirements package version.
      Because there is bug that working with linum-mode

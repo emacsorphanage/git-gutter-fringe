@@ -1,5 +1,9 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.08 2013/03/11 syohex
+   - Update requirements package version.
+     Fix some bugs.
+
 Revision 0.07 2013/03/07 syohex
    - Update requirements package version.
      Fix some bugs.

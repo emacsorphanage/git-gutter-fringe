@@ -21,9 +21,8 @@
 
 ## Installation
 
-You can install `git-gutter.el` fromfrom [MELPA](https://github.com/milkypostman/melpa.git) with package.el
-(`M-x package-install git-gutter-fringe`). You don't worry that byte compile error is occured when installing
-`fringe-helper`.
+You can install `git-gutter.el` from [MELPA](https://github.com/milkypostman/melpa.git) with package.el
+(`M-x package-install git-gutter-fringe`).
 
 And you can also install it with [el-get](https://github.com/dimitri/el-get).
 

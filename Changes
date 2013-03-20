@@ -1,5 +1,10 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.09 2013/03/20 syohex
+   - Improve deletion overlay(Thanks sabof)
+   - Update requirements package version.
+     fix some bugs in git-gutter.el
+
 Revision 0.08 2013/03/11 syohex
    - Update requirements package version.
      Fix some bugs.

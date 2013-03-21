@@ -1,5 +1,8 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.10 2013/03/21 syohex
+   - Fix viewing deleted hunk problem
+
 Revision 0.09 2013/03/20 syohex
    - Improve deletion overlay(Thanks sabof)
    - Update requirements package version.

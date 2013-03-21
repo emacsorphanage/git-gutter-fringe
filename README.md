@@ -5,6 +5,8 @@
 
 
 `git-gutter.el` does not work with `linum-mode` but `git-gutter-fringe.el` can work with `linum-mode`.
+In contrast, `git-gutter-fringe.el` does not work in tty frame(`emacs -nw`), but `git-gutter.el`
+can work in tty frame.
 
 
 ## Screenshot

@@ -103,8 +103,7 @@
   (let* ((sign (git-gutter-fr:select-sign type))
          (face (git-gutter-fr:select-face type))
          (beg (git-gutter:line-to-pos start-line))
-         (end (or (and end-line (git-gutter:line-to-pos end-line))
-                  beg))
+         (end (if (eq type 'deleted) beg (git-gutter:line-to-pos end-line)))
          (reference (fringe-helper-insert-region
                      beg end sign git-gutter-fr:side face)))
     (overlay-put reference 'git-gutter t)

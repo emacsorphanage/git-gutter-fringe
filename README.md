@@ -40,10 +40,10 @@ Interfaces are same as `git-gutter.el`.
 
 ## Sample Configuration
 
-```` elisp
+```elisp
 ;; You need to install fringe-helper.el
 (require 'git-gutter-fringe)
-````
+```
 
 ## Customize
 
@@ -53,17 +53,17 @@ Interfaces are same as `git-gutter.el`.
 
 You can change faces like following.
 
-````elisp
+```elisp
 (set-face-foreground 'git-gutter-fr:modified "yellow")
 (set-face-foreground 'git-gutter-fr:added    "blue")
 (set-face-foreground 'git-gutter-fr:deleted  "white")
-````
+```
 
 ### Change signs in fringe
 
 ![git-gutter-fringe-change-signs](image/git-gutter-fringe-change-signs.png)
 
-````elisp
+```elisp
 ;; Please adjust fringe width if your own sign is too big.
 (setq-default left-fringe-width  20)
 (setq-default right-fringe-width 20)
@@ -97,7 +97,7 @@ You can change faces like following.
   "X..XX..X"
   "X..XX..X"
   "X..XX..X")
-````
+```
 
 ### Position of fringe
 
@@ -105,6 +105,6 @@ You can change faces like following.
 
 You can change position of fringe, left or right. Default is left.
 
-````elisp
+```elisp
 (setq git-gutter-fr:side 'right-fringe)
-````
+```

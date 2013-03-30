@@ -81,23 +81,19 @@
   "..XXXX.."
   "........")
 
-(defun git-gutter-fr:select-sign (type)
-  (case type
-    (modified 'git-gutter-fr:modified)
-    (added    'git-gutter-fr:added)
-    (deleted  'git-gutter-fr:deleted)
-    (otherwise
-     (error "Invalid type"))))
-
-(defun git-gutter-fr:select-face (type)
-  (case type
-    (modified 'git-gutter-fr:modified)
-    (added    'git-gutter-fr:added)
-    (deleted  'git-gutter-fr:deleted)
-    (otherwise
-     (error "Invalid type"))))
-
 (defvar git-gutter-fr:bitmap-references nil)
+
+(defsubst git-gutter-fr:select-sign (type)
+  (case type
+    (modified 'git-gutter-fr:modified)
+    (added    'git-gutter-fr:added)
+    (deleted  'git-gutter-fr:deleted)))
+
+(defsubst git-gutter-fr:select-face (type)
+  (case type
+    (modified 'git-gutter-fr:modified)
+    (added    'git-gutter-fr:added)
+    (deleted  'git-gutter-fr:deleted)))
 
 (defun git-gutter-fr:view-region (type start-line end-line)
   (let* ((sign (git-gutter-fr:select-sign type))
@@ -125,7 +121,7 @@
   (when git-gutter-fr:bitmap-references
     (git-gutter:clear))
   (save-excursion
-    (mapc #'git-gutter-fr:view-diff-info diffinfos)))
+    (mapc 'git-gutter-fr:view-diff-info diffinfos)))
 
 ;; @@@ Somtimes `fringe-helper-remove' does not work for clearing overlays
 ;;(defun git-gutter-fr:clear-overlay (reference)
@@ -140,9 +136,9 @@
         (delete-overlay ov))))
   (setq git-gutter-fr:bitmap-references nil))
 
-(setq git-gutter:init-function #'git-gutter-fr:init)
-(setq git-gutter:view-diff-function #'git-gutter-fr:view-diff-infos)
-(setq git-gutter:clear-function #'git-gutter-fr:clear)
+(setq git-gutter:init-function      'git-gutter-fr:init
+      git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
+      git-gutter:clear-function     'git-gutter-fr:clear)
 
 (provide 'git-gutter-fringe)
 

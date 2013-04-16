@@ -4,8 +4,8 @@
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
-;; Version: 0.11
-;; Package-Requires: ((git-gutter "0.38") (fringe-helper "0.1.1"))
+;; Version: 0.12
+;; Package-Requires: ((git-gutter "0.42") (fringe-helper "0.1.1"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -129,11 +129,9 @@
 ;;  t)
 
 (defun git-gutter-fr:clear ()
-  (save-restriction
-    (widen)
-    (dolist (ov (overlays-in (point-min) (point-max)))
-      (when (overlay-get ov 'git-gutter)
-        (delete-overlay ov))))
+  (dolist (ov (overlays-in (point-min) (point-max)))
+    (when (overlay-get ov 'git-gutter)
+      (delete-overlay ov)))
   (setq git-gutter-fr:bitmap-references nil))
 
 (setq git-gutter:init-function      'git-gutter-fr:init

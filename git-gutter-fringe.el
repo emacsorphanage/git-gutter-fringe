@@ -82,6 +82,8 @@
   "........")
 
 (defvar git-gutter-fr:bitmap-references nil)
+(make-variable-buffer-local 'git-gutter-fr:bitmap-references)
+(put 'git-gutter-fr:bitmap-references 'permanent-local t)
 
 (defsubst git-gutter-fr:select-sign (type)
   (case type
@@ -108,8 +110,7 @@
         (overlay-put ov 'git-gutter t)))
     (push reference git-gutter-fr:bitmap-references)))
 
-(defun git-gutter-fr:init ()
-  (make-local-variable 'git-gutter-fr:bitmap-references))
+(defun git-gutter-fr:init ())
 
 (defun git-gutter-fr:view-diff-info (diffinfo)
   (let ((start-line (plist-get diffinfo :start-line))

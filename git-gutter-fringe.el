@@ -126,7 +126,8 @@
   (setq git-gutter-fr:bitmap-references nil))
 
 (setq git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
-      git-gutter:clear-function     'git-gutter-fr:clear)
+      git-gutter:clear-function 'git-gutter-fr:clear
+      git-gutter:window-config-change-function nil)
 
 (provide 'git-gutter-fringe)
 

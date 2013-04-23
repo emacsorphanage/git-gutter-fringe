@@ -104,10 +104,6 @@
          (end (if (eq type 'deleted) beg (git-gutter:line-to-pos end-line)))
          (reference (fringe-helper-insert-region
                      beg end sign git-gutter-fr:side face)))
-    (overlay-put reference 'git-gutter t)
-    (dolist (ov (overlays-in beg (1+ end)))
-      (when (eq (overlay-get ov 'fringe-helper-parent) reference)
-        (overlay-put ov 'git-gutter t)))
     (push reference git-gutter-fr:bitmap-references)))
 
 (defun git-gutter-fr:init ())

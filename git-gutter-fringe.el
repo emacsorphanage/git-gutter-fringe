@@ -124,15 +124,11 @@
   (save-excursion
     (mapc 'git-gutter-fr:view-diff-info diffinfos)))
 
-;; @@@ Somtimes `fringe-helper-remove' does not work for clearing overlays
-;;(defun git-gutter-fr:clear-overlay (reference)
-;;  (fringe-helper-remove reference)
-;;  t)
+(defun git-gutter-fr:clear-overlay (reference)
+ (fringe-helper-remove reference))
 
 (defun git-gutter-fr:clear ()
-  (dolist (ov (overlays-in (point-min) (point-max)))
-    (when (overlay-get ov 'git-gutter)
-      (delete-overlay ov)))
+  (mapc 'git-gutter-fr:clear-overlay git-gutter-fr:bitmap-references)
   (setq git-gutter-fr:bitmap-references nil))
 
 (setq git-gutter:init-function      'git-gutter-fr:init

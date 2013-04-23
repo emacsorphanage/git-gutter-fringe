@@ -106,8 +106,6 @@
                      beg end sign git-gutter-fr:side face)))
     (push reference git-gutter-fr:bitmap-references)))
 
-(defun git-gutter-fr:init ())
-
 (defun git-gutter-fr:view-diff-info (diffinfo)
   (let ((start-line (plist-get diffinfo :start-line))
         (end-line (plist-get diffinfo :end-line))
@@ -127,8 +125,7 @@
   (mapc 'git-gutter-fr:clear-overlay git-gutter-fr:bitmap-references)
   (setq git-gutter-fr:bitmap-references nil))
 
-(setq git-gutter:init-function      'git-gutter-fr:init
-      git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
+(setq git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
       git-gutter:clear-function     'git-gutter-fr:clear)
 
 (provide 'git-gutter-fringe)

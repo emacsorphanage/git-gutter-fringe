@@ -5,7 +5,7 @@
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
 ;; Version: 0.12
-;; Package-Requires: ((git-gutter "0.42") (fringe-helper "0.1.1"))
+;; Package-Requires: ((git-gutter "0.42") (fringe-helper "20130427.1608"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -82,6 +82,8 @@
   "........")
 
 (defvar git-gutter-fr:bitmap-references nil)
+(make-variable-buffer-local 'git-gutter-fr:bitmap-references)
+(put 'git-gutter-fr:bitmap-references 'permanent-local t)
 
 (defsubst git-gutter-fr:select-sign (type)
   (case type
@@ -102,14 +104,7 @@
          (end (if (eq type 'deleted) beg (git-gutter:line-to-pos end-line)))
          (reference (fringe-helper-insert-region
                      beg end sign git-gutter-fr:side face)))
-    (overlay-put reference 'git-gutter t)
-    (dolist (ov (overlays-in beg (1+ end)))
-      (when (eq (overlay-get ov 'fringe-helper-parent) reference)
-        (overlay-put ov 'git-gutter t)))
     (push reference git-gutter-fr:bitmap-references)))
-
-(defun git-gutter-fr:init ()
-  (make-local-variable 'git-gutter-fr:bitmap-references))
 
 (defun git-gutter-fr:view-diff-info (diffinfo)
   (let ((start-line (plist-get diffinfo :start-line))
@@ -123,20 +118,16 @@
   (save-excursion
     (mapc 'git-gutter-fr:view-diff-info diffinfos)))
 
-;; @@@ Somtimes `fringe-helper-remove' does not work for clearing overlays
-;;(defun git-gutter-fr:clear-overlay (reference)
-;;  (fringe-helper-remove reference)
-;;  t)
+(defun git-gutter-fr:clear-overlay (reference)
+ (fringe-helper-remove reference))
 
 (defun git-gutter-fr:clear ()
-  (dolist (ov (overlays-in (point-min) (point-max)))
-    (when (overlay-get ov 'git-gutter)
-      (delete-overlay ov)))
+  (mapc 'git-gutter-fr:clear-overlay git-gutter-fr:bitmap-references)
   (setq git-gutter-fr:bitmap-references nil))
 
-(setq git-gutter:init-function      'git-gutter-fr:init
-      git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
-      git-gutter:clear-function     'git-gutter-fr:clear)
+(setq git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
+      git-gutter:clear-function 'git-gutter-fr:clear
+      git-gutter:window-config-change-function nil)
 
 (provide 'git-gutter-fringe)
 

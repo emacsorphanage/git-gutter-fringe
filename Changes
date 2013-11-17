@@ -1,5 +1,8 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.13 2013/11/17 syohex
+   - Add comment section
+
 Revision 0.12 2013/04/16 syohex
    - Remove code for narrow-to-region
      Because it is moved to git-gutter.el

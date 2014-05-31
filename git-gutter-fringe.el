@@ -5,7 +5,7 @@
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
 ;; Version: 0.13
-;; Package-Requires: ((git-gutter "0.42") (fringe-helper "0.1.1"))
+;; Package-Requires: ((git-gutter "0.42") (fringe-helper "0.1.1") (cl-lib "0.5"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -36,8 +36,7 @@
 
 ;;; Code:
 
-(eval-when-compile
-  (require 'cl))
+(require 'cl-lib)
 
 (require 'git-gutter)
 (require 'fringe-helper)
@@ -96,13 +95,13 @@
 (defvar git-gutter-fr:bitmap-references nil)
 
 (defsubst git-gutter-fr:select-sign (type)
-  (case type
+  (cl-case type
     (modified 'git-gutter-fr:modified)
     (added    'git-gutter-fr:added)
     (deleted  'git-gutter-fr:deleted)))
 
 (defsubst git-gutter-fr:select-face (type)
-  (case type
+  (cl-case type
     (modified 'git-gutter-fr:modified)
     (added    'git-gutter-fr:added)
     (deleted  'git-gutter-fr:deleted)))

@@ -1,11 +1,11 @@
-;;; git-gutter-fringe.el --- Fringe version of git-gutter.el
+;;; git-gutter-fringe.el --- Fringe version of git-gutter.el -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2013 by Syohei YOSHIDA
+;; Copyright (C) 2014 by Syohei YOSHIDA
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
 ;; Version: 0.13
-;; Package-Requires: ((git-gutter "0.60") (fringe-helper "0.1.1") (cl-lib "0.5"))
+;; Package-Requires: ((git-gutter "0.60") (fringe-helper "0.1.1") (cl-lib "0.5") (emacs "24"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by

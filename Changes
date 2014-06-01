@@ -1,5 +1,9 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.14 2014/06/01 syohex
+   - Update required version dependency
+   - Drop Emacs 23 support
+
 Revision 0.13 2013/11/17 syohex
    - Add comment section
 

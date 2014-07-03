@@ -1,5 +1,9 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.16 2014/07/04 syohex
+   - Fix removed function issue
+     Thanks tanzoniteblack!!
+
 Revision 0.15 2014/06/09 syohex
    - Update git-gutter.el version
 

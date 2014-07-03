@@ -106,11 +106,17 @@
     (added    'git-gutter-fr:added)
     (deleted  'git-gutter-fr:deleted)))
 
+(defun git-gutter-fr:line-to-pos (line)
+  (save-excursion
+    (goto-char (point-min))
+    (forward-line (1- line))
+    (point)))
+
 (defun git-gutter-fr:view-region (type start-line end-line)
   (let* ((sign (git-gutter-fr:select-sign type))
          (face (git-gutter-fr:select-face type))
-         (beg (git-gutter:line-to-pos start-line))
-         (end (if (eq type 'deleted) beg (git-gutter:line-to-pos end-line)))
+         (beg (git-gutter-fr:line-to-pos start-line))
+         (end (if (eq type 'deleted) beg (git-gutter-fr:line-to-pos end-line)))
          (reference (fringe-helper-insert-region
                      beg end sign git-gutter-fr:side face)))
     (overlay-put reference 'git-gutter t)

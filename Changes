@@ -1,5 +1,9 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.17 2014/07/05 syohex
+   - Improve face configuration(Thanks tanzoniteblack!!)
+   - Optimize view
+
 Revision 0.16 2014/07/04 syohex
    - Fix removed function issue
      Thanks tanzoniteblack!!

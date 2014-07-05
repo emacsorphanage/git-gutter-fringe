@@ -106,39 +106,39 @@
     (added    'git-gutter-fr:added)
     (deleted  'git-gutter-fr:deleted)))
 
-(defun git-gutter-fr:line-to-pos (line)
-  (save-excursion
-    (goto-char (point-min))
-    (forward-line (1- line))
-    (point)))
-
-(defun git-gutter-fr:view-region (type start-line end-line)
-  (let* ((sign (git-gutter-fr:select-sign type))
-         (face (git-gutter-fr:select-face type))
-         (beg (git-gutter-fr:line-to-pos start-line))
-         (end (if (eq type 'deleted) beg (git-gutter-fr:line-to-pos end-line)))
-         (reference (fringe-helper-insert-region
-                     beg end sign git-gutter-fr:side face)))
-    (overlay-put reference 'git-gutter t)
-    (dolist (ov (overlays-in beg (1+ end)))
-      (when (eq (overlay-get ov 'fringe-helper-parent) reference)
-        (overlay-put ov 'git-gutter t)))
-    (push reference git-gutter-fr:bitmap-references)))
-
 (defun git-gutter-fr:init ()
   (make-local-variable 'git-gutter-fr:bitmap-references))
-
-(defun git-gutter-fr:view-diff-info (diffinfo)
-  (let ((start-line (plist-get diffinfo :start-line))
-        (end-line (plist-get diffinfo :end-line))
-        (type (plist-get diffinfo :type)))
-    (git-gutter-fr:view-region type start-line end-line)))
 
 (defun git-gutter-fr:view-diff-infos (diffinfos)
   (when git-gutter-fr:bitmap-references
     (git-gutter:clear))
   (save-excursion
-    (mapc 'git-gutter-fr:view-diff-info diffinfos)))
+    (goto-char (point-min))
+    (cl-loop with curline = 1
+             for info in diffinfos
+             for start-line = (plist-get info :start-line)
+             for end-line = (plist-get info :end-line)
+             for type = (plist-get info :type)
+             do
+             (let (beg end)
+               (forward-line (- start-line curline))
+               (setq beg (point))
+               (if (eq type 'deleted)
+                   (progn
+                     (setq end beg)
+                     (forward-line 1))
+                 (forward-line (- end-line start-line))
+                 (setq end (point)))
+               (let* ((sign (git-gutter-fr:select-sign type))
+                      (face (git-gutter-fr:select-face type))
+                      (reference (fringe-helper-insert-region
+                                  beg end sign git-gutter-fr:side face)))
+                 (overlay-put reference 'git-gutter t)
+                 (dolist (ov (overlays-in beg (1+ end)))
+                   (when (eq (overlay-get ov 'fringe-helper-parent) reference)
+                     (overlay-put ov 'git-gutter t)))
+                 (push reference git-gutter-fr:bitmap-references))
+               (setq curline (1+ end-line))))))
 
 ;; @@@ Somtimes `fringe-helper-remove' does not work for clearing overlays
 ;;(defun git-gutter-fr:clear-overlay (reference)

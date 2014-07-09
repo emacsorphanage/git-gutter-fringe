@@ -38,6 +38,8 @@
 
 (require 'cl-lib)
 
+(defvar git-gutter-fringe nil)
+
 (require 'git-gutter)
 (require 'fringe-helper)
 

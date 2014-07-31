@@ -140,7 +140,7 @@
                    (when (eq (overlay-get ov 'fringe-helper-parent) reference)
                      (overlay-put ov 'git-gutter t)))
                  (push reference git-gutter-fr:bitmap-references))
-               (setq curline (1+ end-line))))))
+               (setq curline end-line)))))
 
 ;; @@@ Somtimes `fringe-helper-remove' does not work for clearing overlays
 ;;(defun git-gutter-fr:clear-overlay (reference)

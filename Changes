@@ -1,5 +1,8 @@
 Revision history for git-gutter-fringe.el
 
+Revision 0.19 2014/07/31 syohex
+   - Fix off-by-one error(Thanks juszczakn!!)
+
 Revision 0.18 2014/07/09 syohex
    - Fix for linum-mode
 

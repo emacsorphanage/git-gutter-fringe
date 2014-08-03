@@ -127,8 +127,7 @@
                (setq beg (point))
                (if (eq type 'deleted)
                    (progn
-                     (setq end beg)
-                     (forward-line 1))
+                     (setq end beg))
                  (forward-line (- end-line start-line))
                  (setq end (point)))
                (let* ((sign (git-gutter-fr:select-sign type))

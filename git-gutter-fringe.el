@@ -5,7 +5,7 @@
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-git-gutter-fringe
 ;; Version: 0.20
-;; Package-Requires: ((git-gutter "0.71") (fringe-helper "0.1.1") (cl-lib "0.5") (emacs "24"))
+;; Package-Requires: ((git-gutter "0.73") (fringe-helper "0.1.1") (cl-lib "0.5") (emacs "24"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -154,7 +154,8 @@
 
 (setq git-gutter:init-function      'git-gutter-fr:init
       git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
-      git-gutter:clear-function     'git-gutter-fr:clear)
+      git-gutter:clear-function     'git-gutter-fr:clear
+      git-gutter:window-width -1)
 
 (provide 'git-gutter-fringe)
 

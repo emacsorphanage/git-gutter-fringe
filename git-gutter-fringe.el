@@ -154,7 +154,8 @@
 
 (setq git-gutter:init-function      'git-gutter-fr:init
       git-gutter:view-diff-function 'git-gutter-fr:view-diff-infos
-      git-gutter:clear-function     'git-gutter-fr:clear)
+      git-gutter:clear-function     'git-gutter-fr:clear
+      git-gutter:window-width -1)
 
 (provide 'git-gutter-fringe)
 

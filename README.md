@@ -8,6 +8,7 @@
 In contrast, `git-gutter-fringe.el` does not work in tty frame(`emacs -nw`), but `git-gutter.el`
 can work in tty frame.
 
+**NOTE: You can not use both git-gutter.el and git-gutter-fringe.el**
 
 ## Screenshot
 

@@ -1,4 +1,4 @@
-# git-gutter-fringe.el
+# git-gutter-fringe.el [![melpa badge][melpa-badge]][melpa-link] [![melpa stable badge][melpa-stable-badge]][melpa-stable-link]
 
 ## Introduction
 `git-gutter-fringe.el` is fringe version of of [git-gutter.el](https://github.com/syohex/emacs-git-gutter).
@@ -109,3 +109,8 @@ You can change position of fringe, left or right. Default is left.
 ```lisp
 (setq git-gutter-fr:side 'right-fringe)
 ```
+
+[melpa-link]: http://melpa.org/#/git-gutter-fringe
+[melpa-stable-link]: http://melpa.org/#/git-gutter-fringe
+[melpa-badge]: http://melpa.org/packages/git-gutter-fringe-badge.svg
+[melpa-stable-badge]: http://stable.melpa.org/packages/git-gutter-fringe-badge.svg

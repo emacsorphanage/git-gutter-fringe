@@ -110,6 +110,25 @@ You can change position of fringe, left or right. Default is left.
 (setq git-gutter-fr:side 'right-fringe)
 ```
 
+## Comparison with diff-hl
+
+I suppose if you enable vc-mode, you should use diff-hl rather than git-gutter-fringe.
+I always use git-gutter.el(and I love git-gutter.el), however I don't use git-gutter-fringe
+and don't do dog-fooding myself.
+
+#### diff-hl is based on Emacs VC. git-gutter-fringe does not use vc.
+
+You can use git-gutter-fringe even if you disable vc-mode.
+While diff-hl benefits from VC. For example, if vc supports new VCS which is greater than git,
+diff-hl works with such VCS with no code modification. However git-gutter.el does not
+benefit from vc-mode, I need to add code for supporting such new great VCS.
+
+
+#### See also
+
+- [diff-hl](https://github.com/dgutov/diff-hl)
+- [git-gutter](https://github.com/syohex/emacs-git-gutter/)
+
 [melpa-link]: https://melpa.org/#/git-gutter-fringe
 [melpa-stable-link]: https://stable.melpa.org/#/git-gutter-fringe
 [melpa-badge]: https://melpa.org/packages/git-gutter-fringe-badge.svg

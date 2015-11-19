@@ -110,7 +110,7 @@ You can change position of fringe, left or right. Default is left.
 (setq git-gutter-fr:side 'right-fringe)
 ```
 
-[melpa-link]: http://melpa.org/#/git-gutter-fringe
-[melpa-stable-link]: http://stable.melpa.org/#/git-gutter-fringe
-[melpa-badge]: http://melpa.org/packages/git-gutter-fringe-badge.svg
-[melpa-stable-badge]: http://stable.melpa.org/packages/git-gutter-fringe-badge.svg
+[melpa-link]: https://melpa.org/#/git-gutter-fringe
+[melpa-stable-link]: https://stable.melpa.org/#/git-gutter-fringe
+[melpa-badge]: https://melpa.org/packages/git-gutter-fringe-badge.svg
+[melpa-stable-badge]: https://stable.melpa.org/packages/git-gutter-fringe-badge.svg

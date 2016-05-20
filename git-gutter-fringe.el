@@ -113,14 +113,14 @@
 
 (defun git-gutter-fr:view-diff-infos (diffinfos)
   (when git-gutter-fr:bitmap-references
-    (git-gutter:clear))
+    (git-gutter:clear-gutter))
   (save-excursion
     (goto-char (point-min))
     (cl-loop with curline = 1
              for info in diffinfos
-             for start-line = (plist-get info :start-line)
-             for end-line = (plist-get info :end-line)
-             for type = (plist-get info :type)
+             for start-line = (git-gutter-hunk-start-line info)
+             for end-line = (git-gutter-hunk-end-line info)
+             for type = (git-gutter-hunk-type info)
              do
              (let (beg end)
                (forward-line (- start-line curline))

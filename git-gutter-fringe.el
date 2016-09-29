@@ -148,7 +148,14 @@
 
 (defun git-gutter-fr:clear ()
   (dolist (ov (overlays-in (point-min) (point-max)))
-    (when (overlay-get ov 'git-gutter)
+    (when (or (overlay-get ov 'git-gutter)
+              (let ((parent (overlay-get ov 'fringe-helper-parent)))
+                (and parent
+                     (or
+                      ;; Parent has been deleted
+                      (null (overlay-buffer parent))
+                      ;; or parent was created by git-gutter
+                      (overlay-get parent 'git-gutter)))))
       (delete-overlay ov)))
   (setq git-gutter-fr:bitmap-references nil))
 

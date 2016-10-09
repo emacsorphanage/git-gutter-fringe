@@ -12,7 +12,7 @@ can work in tty frame.
 
 ## Screenshot
 
-![git-gutter-fringe.el](image/git-gutter-fringe.png)
+![Screenshot of git-gutter-fringe.el](image/git-gutter-fringe.png)
 
 
 ## Requirements

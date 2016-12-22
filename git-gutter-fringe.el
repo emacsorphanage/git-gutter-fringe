@@ -44,17 +44,17 @@
 (require 'fringe-helper)
 
 (defface git-gutter-fr:modified
-    '((t (:inherit git-gutter:modified)))
+    '((t (:inherit (fringe git-gutter:modified))))
   "Face of modified"
   :group 'git-gutter)
 
 (defface git-gutter-fr:added
-    '((t (:inherit git-gutter:added)))
+    '((t (:inherit (fringe git-gutter:added))))
   "Face of added"
   :group 'git-gutter)
 
 (defface git-gutter-fr:deleted
-    '((t (:inherit git-gutter:deleted)))
+    '((t (:inherit (fringe git-gutter:deleted))))
   "Face of deleted"
   :group 'git-gutter)
 

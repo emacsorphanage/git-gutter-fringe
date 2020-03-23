@@ -60,7 +60,7 @@
   :group 'git-gutter)
 
 (defcustom git-gutter-fr:side 'left-fringe
-  "Side of show diff information"
+  "Side of show diff information."
   :type '(choice (const :tag "Right Fringe" right-fringe)
                  (const :tag "Left Fringe" left-fringe))
   :group 'git-gutter)
@@ -98,21 +98,25 @@
 (defvar git-gutter-fr:bitmap-references nil)
 
 (defsubst git-gutter-fr:select-sign (type)
+  "Choose fringe sign for this TYPE of diff."
   (cl-case type
     (modified 'git-gutter-fr:modified)
     (added    'git-gutter-fr:added)
     (deleted  'git-gutter-fr:deleted)))
 
 (defsubst git-gutter-fr:select-face (type)
+  "Choose fringe face for this TYPE of diff."
   (cl-case type
     (modified 'git-gutter-fr:modified)
     (added    'git-gutter-fr:added)
     (deleted  'git-gutter-fr:deleted)))
 
 (defun git-gutter-fr:init ()
+  "Set up buffer local variables for fringe display."
   (make-local-variable 'git-gutter-fr:bitmap-references))
 
 (defun git-gutter-fr:view-diff-infos (diffinfos)
+  "Insert fringe bitmaps for the diffs in DIFFINFOS."
   (when git-gutter-fr:bitmap-references
     (git-gutter:clear-gutter))
   (save-excursion
@@ -148,6 +152,7 @@
 ;;  t)
 
 (defun git-gutter-fr:clear ()
+  "Clear fringe bitmaps."
   (dolist (ov (overlays-in (point-min) (point-max)))
     (when (or (overlay-get ov 'git-gutter)
               (let ((parent (overlay-get ov 'fringe-helper-parent)))

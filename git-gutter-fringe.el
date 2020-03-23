@@ -1,9 +1,10 @@
 ;;; git-gutter-fringe.el --- Fringe version of git-gutter.el -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2014 by Syohei YOSHIDA
+;; Copyright (C) 2014-2020 Syohei YOSHIDA and Neil Okamoto
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
-;; URL: https://github.com/syohex/emacs-git-gutter-fringe
+;; Maintainer: Neil Okamoto <neil.okamoto+melpa@gmail.com>
+;; URL: https://github.com/emacsorphanage/git-gutter-fringe
 ;; Version: 0.23
 ;; Package-Requires: ((git-gutter "0.88") (fringe-helper "0.1.1") (cl-lib "0.5") (emacs "24"))
 
@@ -22,8 +23,8 @@
 
 ;;; Commentary:
 
-;; Show git diff information in fringe. You can use this package
-;; only GUI Emacs, not working no window emacs.
+;; Show git diff information in fringe.  You can use this package
+;; only with GUI Emacs, not in a terminal Emacs.
 
 ;; To use this package, add following code to your init.el or .emacs
 ;;
@@ -44,17 +45,17 @@
 (require 'fringe-helper)
 
 (defface git-gutter-fr:modified
-    '((t (:inherit (git-gutter:modified fringe))))
+  '((t (:inherit (git-gutter:modified fringe))))
   "Face of modified"
   :group 'git-gutter)
 
 (defface git-gutter-fr:added
-    '((t (:inherit (git-gutter:added fringe))))
+  '((t (:inherit (git-gutter:added fringe))))
   "Face of added"
   :group 'git-gutter)
 
 (defface git-gutter-fr:deleted
-    '((t (:inherit (git-gutter:deleted fringe))))
+  '((t (:inherit (git-gutter:deleted fringe))))
   "Face of deleted"
   :group 'git-gutter)
 
@@ -167,3 +168,9 @@
 (provide 'git-gutter-fringe)
 
 ;;; git-gutter-fringe.el ends here
+
+
+;; Local Variables:
+;; fill-column: 80
+;; indent-tabs-mode: nil
+;; End:

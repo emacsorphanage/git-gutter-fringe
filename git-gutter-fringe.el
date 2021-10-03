@@ -66,34 +66,34 @@
   :group 'git-gutter)
 
 (fringe-helper-define 'git-gutter-fr:added nil
-  "...XX..."
-  "...XX..."
-  "...XX..."
-  "XXXXXXXX"
-  "XXXXXXXX"
-  "...XX..."
-  "...XX..."
-  "...XX...")
+                      "...XX..."
+                      "...XX..."
+                      "...XX..."
+                      "XXXXXXXX"
+                      "XXXXXXXX"
+                      "...XX..."
+                      "...XX..."
+                      "...XX...")
 
 (fringe-helper-define 'git-gutter-fr:deleted nil
-  "........"
-  "........"
-  "........"
-  "XXXXXXXX"
-  "XXXXXXXX"
-  "........"
-  "........"
-  "........")
+                      "........"
+                      "........"
+                      "........"
+                      "XXXXXXXX"
+                      "XXXXXXXX"
+                      "........"
+                      "........"
+                      "........")
 
 (fringe-helper-define 'git-gutter-fr:modified nil
-  "........"
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "..XXXX.."
-  "........")
+                      "........"
+                      "..XXXX.."
+                      "..XXXX.."
+                      "..XXXX.."
+                      "..XXXX.."
+                      "..XXXX.."
+                      "..XXXX.."
+                      "........")
 
 (defvar git-gutter-fr:bitmap-references nil)
 

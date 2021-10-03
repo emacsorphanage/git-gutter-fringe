@@ -18,6 +18,7 @@ lint: elpa
 	$(CASK) exec $(EMACS) -Q --batch $(LOADPATH) \
 	    -l elisp-lint.el \
 	    -f elisp-lint-files-batch \
+	    --no-byte-compile \
 	    --no-package-lint \
 	    $(ELS)
 

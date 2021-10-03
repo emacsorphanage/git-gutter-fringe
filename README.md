@@ -2,7 +2,7 @@
 
 [![melpa badge][melpa-badge]][melpa-link]
 [![melpa stable badge][melpa-stable-badge]][melpa-stable-link]
-[![circleci badge][circleci-badge]][circleci-link]
+[![gh actions badge][gh-actions-badge]][gh-actions-link]
 
 ## Introduction
 `git-gutter-fringe.el` is fringe version of of [git-gutter.el](https://github.com/syohex/emacs-git-gutter).
@@ -135,7 +135,7 @@ benefit from vc-mode, I need to add code for supporting such new great VCS.
 
 [melpa-link]: https://melpa.org/#/git-gutter-fringe
 [melpa-stable-link]: https://stable.melpa.org/#/git-gutter-fringe
-[circleci-link]: https://app.circleci.com/pipelines/github/emacsorphanage/git-gutter-fringe
+[gh-actions-link]: https://github.com/emacsorphanage/git-gutter-fringe/actions
 [melpa-badge]: https://melpa.org/packages/git-gutter-fringe-badge.svg
 [melpa-stable-badge]: https://stable.melpa.org/packages/git-gutter-fringe-badge.svg
-[circleci-badge]: https://img.shields.io/circleci/project/github/emacsorphanage/git-gutter-fringe.svg
+[gh-actions-badge]: https://github.com/emacsorphanage/git-gutter-fringe/workflows/ci-checks/badge.svg

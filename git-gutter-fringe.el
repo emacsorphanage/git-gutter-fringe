@@ -46,17 +46,17 @@
 
 (defface git-gutter-fr:modified
   '((t (:inherit (git-gutter:modified fringe))))
-  "Face of modified"
+  "Face of modified fringe."
   :group 'git-gutter)
 
 (defface git-gutter-fr:added
   '((t (:inherit (git-gutter:added fringe))))
-  "Face of added"
+  "Face of added fringe."
   :group 'git-gutter)
 
 (defface git-gutter-fr:deleted
   '((t (:inherit (git-gutter:deleted fringe))))
-  "Face of deleted"
+  "Face of deleted fringe."
   :group 'git-gutter)
 
 (defcustom git-gutter-fr:side 'left-fringe
